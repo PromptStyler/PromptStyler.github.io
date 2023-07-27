@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="PromptStyler: Prompt-driven Style Generation for Source-free Domain Generalization">
+  <meta name="keywords" content="PromptStyler, Prompt, Style Generation, Domain Generalization, DG, Source-free DG, CLIP, Domain Adaptation, DA">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PromptStyler</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">PromptStyler: Prompt-driven Style Generation <br> for Source-free Domain Generalization</h1>
+          <p class="is-size-3"; style="color:#808080; margin-top:-25px"> ICCV 2023 </p>
+          <!-- <br> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://jhcho99.github.io/">Junhyeong Cho</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=7PSBLtIAAAAJ&hl=en">Gilhyun Nam</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="http://cvlab.postech.ac.kr/~sungyeon/">Sungyeon Kim</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.co.kr/citations?user=mDxJj2AAAAAJ&hl=en">Hunmin Yang</a><sup>1,3</sup>,</span>
+              <span class="author-block">
+              <a href="https://suhakwak.github.io/">Suha Kwak</a><sup>2</sup>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>ADD,</span>
+            <span class="author-block"><sup>2</sup>POSTECH,</span>
+            <span class="author-block"><sup>3</sup>KAIST</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://PromptStyler.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://PromptStyler.github.io"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#BibTeX"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-obp"></i>
+                  </span>
+                  <span>BibTex</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="mailto:PromptStyler.official@gmail.com"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-envelope"></i>
+                  </span>
+                  <span>Contact</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser" style="margin-top:-40px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/teaser_6.png"  class="center"/>
+    </div>
+    <h2 class="subtitle has-text-centered" style="margin-top:-12px">
+      By leveraging a joint vision-language space, PromptStyler simulates various distribution shifts via learnable words for pseudo-words <b>S</b><sub>*</sub> without using any images to deal with source-free domain generalization.
+    </h2>
+  </div>
+</section>
+
+
+<!-- Contact. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">Contact</h2>
+        <div class="is-centered has-text-centered is-size-5">
+          <p>
+            PromptStyler (<a href="mailto:PromptStyler.official@gmail.com">PromptStyler.official@gmail.com</a>)
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- BibTex. -->
+<hr>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+    <pre><code>@InProceedings{cho2023PromptStyler,
+      title={PromptStyler: Prompt-driven Style Generation for Source-free Domain Generalization},
+      author={Junhyeong Cho and Gilhyun Nam and Sungyeon Kim and Hunmin Yang and Suha Kwak},
+      booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+      year={2023}
+}</code></pre>
+  </div>
+</section>
+<br><br>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://PromptStyler.github.io">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://jhcho99.github.io/" class="external-link" disabled>
+        <i class="fas fa-user"></i>
+      </a>
+      <a class="icon-link" href="mailto:PromptStyler.official@gmail.com" class="external-link" disabled>
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This website template was adapted from <a href="https://nerfies.github.io/">Nerfies website</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
