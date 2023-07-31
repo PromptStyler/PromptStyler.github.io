@@ -58,7 +58,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://PromptStyler.github.io"
+                <a href="https://arxiv.org/pdf/2307.15199"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -67,7 +67,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://PromptStyler.github.io"
+                <a href="https://arxiv.org/abs/2307.15199"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -100,17 +100,234 @@
     </div>
   </div>
 </section>
-
 <section class="hero teaser" style="margin-top:-40px">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/teaser_6.png"  class="center"/>
+      <img src="static/images/Teaser.png"  class="center"/>
     </div>
     <h2 class="subtitle has-text-centered" style="margin-top:-12px">
       By leveraging a joint vision-language space, PromptStyler simulates various distribution shifts via learnable words for pseudo-words <b>S</b><sub>*</sub> without using any images to deal with source-free domain generalization.
+      <br><br>
+      <div class="gray-box-custom">
+      Thanks to the cross-modal transferability in the joint vision-language space, we could train a classifier using text features while running an inference with the classifier using image features.
+      </div>
     </h2>
   </div>
 </section>
+
+
+
+<!-- Abstract. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In a joint vision-language space, a text feature (e.g., from "a photo of a dog") could effectively represent its relevant image features (e.g., from dog photos). Inspired by this, we propose <b>PromptStyler</b> which simulates various distribution shifts in the joint space by synthesizing diverse styles via prompts without using any images to deal with source-free domain generalization. 
+          </p>
+          <p>
+            Our method learns to generate a variety of style features (from "a <b>S</b><sub>*</sub> style of a") via learnable style word vectors for pseudo-words <b>S</b><sub>*</sub>. To ensure that learned styles do not distort content information, we force style-content features (from "a <b>S</b><sub>*</sub> style of a [class]") to be located nearby their corresponding content features (from "[class]") in the joint vision-language space. After learning style word vectors, we train a linear classifier using synthesized style-content features.  
+          </p>
+          <p>
+            PromptStyler achieves the state of the art on PACS, VLCS, OfficeHome and DomainNet, although it does not require any images and takes just ~30 minutes for training using a single GPU.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<br>
+
+
+
+<!-- Motivation. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">Motivation</h2>
+      </div>
+    </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:-5px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Motivation.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified" style="margin-top:-22px">
+          <p>
+            <b>Figure 1.</b> (a) Text features could effectively represent various image styles in a joint vision-language space. (b) PromptStyler synthesizes diverse styles in a joint vision-language space via learnable style word vectors for pseudo-words <b>S</b><sub>*</sub> without using any images. 
+          </p>
+          <p style="margin-top:40px">
+            We notice that a large-scale pre-trained model might have already observed a great variety of domains and thus can be used as an efficient proxy of actual multiple source domains. From this perspective, we raised a question <i>"Could we further improve model's generalization capability by simulating various distribution shifts in the latent space of such a large-cale model without using any source domain data?"</i> 
+          </p>
+          <p>
+            In this paper, we propose a prompt-driven style generation method, dubbed <b>PromptStyler</b>, which synthesizes diverse styles via learnable word vectors to simulate distribution shifts in a hyperspherical joint vision-language space. PromptStyler is motivated by the observation that a shared style of images could characterize a domain and such a shared style could be captured by a learnable word vector for a pseudo-word <b>S</b><sub>*</sub> using CLIP with a prompt ("a painting in the style of <b>S</b><sub>*</sub>").
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<br>
+
+
+
+<!-- PromptStyler. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">PromptStyler</h2>
+      </div>
+    </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:-5px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Factors.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified" style="margin-top:-22px">
+          <p>
+            <b>Figure 2.</b> Important factors in the proposed method. PromptStyler learns style word vectors for pseudo-words <b>S</b><sub>*</sub> which lead to diverse style features (from "a <b>S</b><sub>*</sub> style of a") while preserving content information encoded in style-content features (from "a <b>S</b><sub>*</sub> style of a [class]"). Our method maximizes <i>style diversity</i> and <i>content consistency</i> in a hyperspherical joint vision-language space (e.g., CLIP latent space).
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Overview.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified" style="margin-top:-22px">
+          <p>
+            <b>Figure 3.</b> PromptStyler learns diverse style word vectors which do not distort content information of style-content prompts. After learning style word vectors, we synthesize style-content features (e.g., from "a <b>S</b><sub><b>1</b></sub> style of a <b>dog</b>") via a pre-trained text encoder for training a linear classifier. The classifier is trained by a classification loss using those synthesized features and their corresponding class labels (e.g., "<b>dog</b>"). At inference time, a pre-trained image encoder extracts image features, which are fed as input to the trained classifier. Note that the encoders are derived from the same vision-language model (e.g., CLIP).
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<br>
+
+
+
+<!-- Experimental Results. -->
+<hr>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top:-5px">Experimental Results</h2>
+      </div>
+    </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:-5px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Table2.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified" style="margin-top:-22px">
+          <p>
+            <b>Table 2.</b> Comparison with the state-of-the-art domain generalization methods. ZS-CLIP (C) denotes zero-shot CLIP using "[class]" as its text prompt, and ZS-CLIP (PC) indicates zero-shot CLIP using "a photo of a [class]" as its text prompt. Note that PromptStyler does not exploit any source domain data and domain descriptions.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Figure4.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified" style="margin-top:-22px">
+          <p>
+            <b>Figure 4.</b> t-SNE visualization results for the target task VLCS (5 classes) using synthesized style-content features. We visualize such features obtained from the learned 80 style word vectors and all the 5 classes (bird, car, chair, dog, person). Different colors denote features obtained from different style word vectors, and different shapes indicate features obtained from different class names. We only colorize features from the first 10 styles. Combining the style diversity loss and content consistency loss leads to diverse styles while preserving content information.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Figure6.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified" style="margin-top:-22px">
+          <p>
+            <b>Figure 6.</b> Top-1 classification accuracy on the PACS, VLCS, OfficeHome and DomainNet datasets with regard to the number of learnable style word vectors.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<br>
+<section class="hero teaser" style="margin-top:20px">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/Figure7.png" class="center-img"/>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified" style="margin-top:-22px">
+          <p>
+            <b>Figure 7.</b> Top-1 classification accuracy on the PACS, VLCS, OfficeHome and DomainNet datasets with regard to the number of training iterations for learning each style word vector.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<br>
+
 
 
 <!-- Contact. -->
@@ -128,6 +345,8 @@
       </div>
     </div>
 </section>
+
+
 
 <!-- BibTex. -->
 <hr>
@@ -148,7 +367,7 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="https://PromptStyler.github.io">
+         href="https://arxiv.org/abs/2307.15199">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://jhcho99.github.io/" class="external-link" disabled>

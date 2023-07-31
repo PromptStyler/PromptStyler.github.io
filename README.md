@@ -1,9 +1,13 @@
 # [ICCV'23] PromptStyler: Prompt-driven Style Generation for Source-free Domain Generalization
-### [Paper](https://PromptStyler.github.io) | [Code](https://PromptStyler.github.io)
+### [Paper](https://arxiv.org/abs/2307.15199) | [Project Page](https://PromptStyler.github.io)
 
 - This is the project page of [PromptStyler: Prompt-driven Style Generation for Source-free Domain Generalization](https://PromptStyler.github.io) (ICCV 2023).
 
 ---
+
+## Contact
+PromptStyler (PromptStyler.official@gmail.com)
+
 
 ## Citation
 If you find our work useful for your research, please cite our paper:
@@ -16,6 +20,7 @@ If you find our work useful for your research, please cite our paper:
     year={2023}
 }
 ````
+
 
 ## Acknowledgments
 This website template was adapted from [Nerfies Website](https://nerfies.github.io/).

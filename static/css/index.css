@@ -3,9 +3,9 @@ body {
 }
 
 .center-img {
-  margin-left: 12.5%;
-  margin-right: 12.5%;
-  width: 75%;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  width: 85%;
 }
 
 .footer .icon-link {
@@ -159,4 +159,12 @@ body {
 }
 #interpolation-image-wrapper img {
   border-radius: 5px;
+}
+
+.gray-box-custom {
+  background-color: #f0f0f0; 
+  padding: 10px; 
+  border-radius: 5px; 
+  width: 99%; 
+  margin: 0 auto;
 }
